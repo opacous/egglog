@@ -42,6 +42,12 @@ impl Sort for F64Sort {
         add_primitives!(eg, "<=" = |a: f64, b: f64| -> Opt { (a <= b).then(|| ()) });
         add_primitives!(eg, ">=" = |a: f64, b: f64| -> Opt { (a >= b).then(|| ()) });
 
+        add_primitives!(eg, "bool-=" = |a: f64, b: f64| -> bool { a == b });
+        add_primitives!(eg, "bool-<" = |a: f64, b: f64| -> bool { a < b });
+        add_primitives!(eg, "bool->" = |a: f64, b: f64| -> bool { a > b });
+        add_primitives!(eg, "bool-<=" = |a: f64, b: f64| -> bool { a <= b });
+        add_primitives!(eg, "bool->=" = |a: f64, b: f64| -> bool { a >= b });
+
         add_primitives!(eg, "min" = |a: f64, b: f64| -> f64 { a.min(b) });
         add_primitives!(eg, "max" = |a: f64, b: f64| -> f64 { a.max(b) });
         add_primitives!(eg, "abs" = |a: f64| -> f64 { a.abs() });
